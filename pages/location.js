@@ -1,13 +1,13 @@
-import React from "react";
+
+import DynamicNavbar from "../components/DynamicNavbar";
 import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
-import BackToTop from "../Tools/backToTop";
+
 
 export default function Location() {
   return (
     <div className="flex flex-col h-screen justify-between ">
       <header>
-        <Navbar />
+        <DynamicNavbar />
       </header>
 
       <div className="flex-grow">
@@ -26,7 +26,7 @@ export default function Location() {
 
       <footer>
         <Footer />
-        <BackToTop />
+      
       </footer>
     </div>
   );

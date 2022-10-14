@@ -1,20 +1,23 @@
-import React from "react";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
-import BackToTop from "../Tools/backToTop";
 
-export default function contact() {
+import DynamicNavbar from "../components/DynamicNavbar";
+import Footer from "../components/Footer";
+import ImgSlider from "../tools/imgSlider";
+import { SliderData } from "../config/ImgConfig";
+
+export default function Contact() {
   return (
     <div className="flex flex-col h-screen justify-between ">
       <header>
-        <Navbar/>
+        <DynamicNavbar/>
       </header>
 
-      <div className="flex-grow">contact</div>
+      <div className="flex-grow">
+        <ImgSlider SliderData={SliderData}/>
+      </div>
 
       <footer>
         <Footer />
-        <BackToTop/>
+        
       </footer>
     </div>
   );

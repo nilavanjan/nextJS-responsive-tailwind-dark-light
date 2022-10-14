@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Typed from "react-typed";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "next-themes";
-import sections from "../Config/LinkConfig";
+import sections from "../config/LinkConfig";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -19,20 +19,20 @@ export default function Navbar() {
 
   return (
     <div
-      className="flex items-center justify-between h-18 max-w-[1240] mx-auto px-8 py-5 shadow-lg bg-white
+      className=" w-full flex items-center justify-between mx-auto px-8 py-1 shadow-lg bg-white
      dark:bg-black dark:text-white"
     >
       {/* image for navbar */}
 
       <Link href="/">
-        <div
+        <button
           onClick={() => {
             nav && handleNav();
           }}
           className="text-red-500 text-2xl"
         >
           <Typed strings={["NILABH ANJAN CHUTIA..."]} typeSpeed={500} />
-        </div>
+        </button>
       </Link>
 
       {/* menu for navbar mapped */}
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         {/* dark and light with icons */}
         <li>
-          <div
+          <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className=" flex ml-3 mt-1  z-10 "
           >
@@ -60,13 +60,13 @@ export default function Navbar() {
             ) : (
               <FaSun className="sun" size={20}></FaSun>
             )}
-          </div>
+          </button>
         </li>
       </ul>
 
       {/* burger button and cross button on mobile view */}
 
-      <div onClick={handleNav} className=" flex md:hidden  z-30 ">
+      <div onClick={handleNav} className=" flex md:hidden ">
         {nav ? (
           <AiOutlineClose size={20} />
         ) : (
@@ -78,8 +78,8 @@ export default function Navbar() {
       <div
         className={
           nav
-            ? "fixed right-0 top-0 w-[60%] border-r border-r-gray-900 bg-black h-auto ease-in-out duration-[20000ms] md:hidden"
-            : "fixed right-[-100%] top-0  ease-in-out duration-[20000ms]"
+            ? "fixed right-0 top-0 w-[60%] border-r border-r-gray-900 bg-gray-300 dark:bg-black h-auto ease-in-out duration-[3000ms] md:hidden"
+            : "fixed right-[-100%] top-0  ease-in-out duration-[3000ms]"
         }
       >
         {/*1st nav bar  mobile menu list mapped */}
@@ -95,6 +95,18 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+           <li>
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className=" flex ml-3 mt-1  z-10 "
+          >
+            {theme === "light" ? (
+              <FaMoon className="moon" size={20}></FaMoon>
+            ) : (
+              <FaSun className="sun" size={20}></FaSun>
+            )}
+          </button>
+        </li>
         </ul>
 
         {/* a close button on mobile menu itself */}
@@ -104,6 +116,7 @@ export default function Navbar() {
           size={20}
         ></AiOutlineClose>
       </div>
+      
     </div>
   );
 }
