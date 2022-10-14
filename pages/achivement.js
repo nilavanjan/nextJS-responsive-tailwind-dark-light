@@ -1,5 +1,6 @@
-import Footer from "../Components/Footer";
+
 import DynamicNavbar from "../components/DynamicNavbar";
+import Bot from "../components/Bot";
 
 
 export default function Achivements() {
@@ -148,7 +149,7 @@ export default function Achivements() {
       </div>
 
       <footer>
-        <Footer />
+       <Bot/>
         
       </footer>
       

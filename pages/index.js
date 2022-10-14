@@ -1,8 +1,5 @@
+import Bot from "../components/Bot";
 import DynamicNavbar from "../components/DynamicNavbar";
-import Footer from "../Components/Footer";
-
-import Navbar from "../Components/Navbar";
-
 
 export default function Home() {
   return (
@@ -14,7 +11,7 @@ export default function Home() {
       <div className="flex-grow dark:bg-black">Index</div>
 
       <footer>
-        <Footer />
+        <Bot />
       </footer>
     </div>
   );

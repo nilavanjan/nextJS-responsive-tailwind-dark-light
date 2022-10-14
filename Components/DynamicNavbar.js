@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
-const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
+const Nav = dynamic(() => import("./Nav"), { ssr: false });
 
 export default function DynamicNavbar() {
   return (
     <>
-      <Navbar></Navbar>
+      <Nav/>
     </>
   );
 }

@@ -1,6 +1,5 @@
-
-import Footer from "../Components/Footer";
 import DynamicNavbar from "../components/DynamicNavbar";
+import Bot from "../components/Bot";
 
 export default function Testpage() {
   return (
@@ -12,8 +11,7 @@ export default function Testpage() {
       <div className="flex-grow">testpage</div>
 
       <footer>
-        <Footer />
-        
+        <Bot />
       </footer>
     </div>
   );

@@ -7,7 +7,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import sections from "../config/LinkConfig";
 
-export default function Navbar() {
+export default function Nav() {
   const [nav, setNav] = useState(false);
   const { theme, setTheme } = useTheme();
   const router = useRouter();

@@ -1,7 +1,5 @@
-
+import Bot from "../components/Bot";
 import DynamicNavbar from "../components/DynamicNavbar";
-import Footer from "../Components/Footer";
-
 
 export default function Location() {
   return (
@@ -25,8 +23,7 @@ export default function Location() {
       </div>
 
       <footer>
-        <Footer />
-      
+        <Bot />
       </footer>
     </div>
   );

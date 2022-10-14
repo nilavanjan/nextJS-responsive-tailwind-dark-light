@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Bot() {
   return (
     <div
       className="flex shadow-lg p-4 static bottom-0 justify-center max-w-[1240] mx-auto px-8
