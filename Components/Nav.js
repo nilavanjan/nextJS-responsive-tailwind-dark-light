@@ -18,10 +18,7 @@ export default function Nav() {
   };
 
   return (
-    <div
-      className=" w-full flex items-center justify-between mx-auto px-8 py-1 shadow-lg bg-white
-     dark:bg-black dark:text-white"
-    >
+    <div className=" w-full flex items-center justify-between mx-auto px-8 py-1 shadow-lgbg-gray-200 dark:bg-black dark:text-white">
       {/* image for navbar */}
 
       <Link href="/">
@@ -39,12 +36,12 @@ export default function Nav() {
       <ul className="hidden md:flex ">
         {sections.map((link) => (
           <li key={link.name} className="md:ml-8 text-l md:my-0 my-7">
-            <Link href={link.link} passHref>
-              <a
-                className={router.pathname === link.link ? "text-red-500" : ""}
-              >
-                {link.name}
-              </a>
+            <Link
+              href={link.link}
+              className={router.pathname === link.link ? "text-red-500" : ""}
+              
+            >
+              {link.name}
             </Link>
           </li>
         ))}
@@ -78,8 +75,8 @@ export default function Nav() {
       <div
         className={
           nav
-            ? "fixed right-0 top-0 w-[60%] border-r border-r-gray-900 bg-gray-300 dark:bg-black h-auto ease-in-out duration-[3000ms] md:hidden"
-            : "fixed right-[-100%] top-0  ease-in-out duration-[3000ms]"
+            ? "fixed right-0 top-0 w-full h-full border-r z-20 border-r-gray-900 bg-gray-300 dark:bg-black md:hidden duration-[2000ms]"
+            : "fixed right-[-100%] top-0 w-full h-full duration-[2000ms]  "
         }
       >
         {/*1st nav bar  mobile menu list mapped */}
@@ -95,18 +92,20 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-           <li>
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className=" flex ml-3 mt-1  z-10 "
-          >
-            {theme === "light" ? (
-              <FaMoon className="moon" size={20}></FaMoon>
-            ) : (
-              <FaSun className="sun" size={20}></FaSun>
-            )}
-          </button>
-        </li>
+          <li>
+            <button
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+              }}
+              className=" flex ml-3 mt-1  z-10 "
+            >
+              {theme === "light" ? (
+                <FaMoon className="moon" size={20}></FaMoon>
+              ) : (
+                <FaSun className="sun" size={20}></FaSun>
+              )}
+            </button>
+          </li>
         </ul>
 
         {/* a close button on mobile menu itself */}
@@ -116,7 +115,6 @@ export default function Nav() {
           size={20}
         ></AiOutlineClose>
       </div>
-      
     </div>
   );
 }

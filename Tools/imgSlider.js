@@ -1,11 +1,31 @@
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { BsArrowBarRight, BsArrowBarLeft } from "react-icons/bs";
 
 function ImgSlider({ SliderData }) {
   const [current, setCurrent] = useState(0);
   const length = SliderData.length;
+  const [touchStart, setTouchStart] = React.useState(0);
+  const [touchEnd, setTouchEnd] = React.useState(0);
 
+  function handleTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchEnd() {
+    if (touchStart - touchEnd > 150) {
+      // do your stuff here for left swipe
+      prevSlide();
+    }
+
+    if (touchStart - touchEnd < -150) {
+      // do your stuff here for right swipe
+      nextSlide();
+    }
+  }
   // functions for next and prev image
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -58,8 +78,9 @@ function ImgSlider({ SliderData }) {
                 <img
                   key={slide.name}
                   src={slide.image}
-                  alt="banners"
-                 className="h-96 w-[1920px]"
+                  // ty="responsive"
+                  alt={slide.name}
+                  className="h-auto max-w-[100%]"
                 />
               )}
             </div>
@@ -68,11 +89,11 @@ function ImgSlider({ SliderData }) {
       </div>
 
       <div className="mt-2 flex place-content-center ">
-        {Array.from({ length: length  }).map((item, index) => (
+        {Array.from({ length: length }).map((item, index) => (
           <div
             key={index}
-            onClick={() => moveDot(index )}
-            className={current === index  ? "dot active" : "dot"}
+            onClick={() => moveDot(index)}
+            className={current === index ? "dot active" : "dot"}
           ></div>
         ))}
       </div>

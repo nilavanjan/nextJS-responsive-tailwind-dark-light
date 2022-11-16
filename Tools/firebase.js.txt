@@ -1,0 +1,15 @@
+import * as firebase from "firebase/app";
+
+firebase.initializeApp({
+  apiKey: "AIzaSyAWmFwcFqEJwF6pXOapKw-NUpG8BhSFOD8",
+  authDomain: "first-firebase-project-8d071.firebaseapp.com",
+  projectId: "first-firebase-project-8d071",
+  storageBucket: "first-firebase-project-8d071.appspot.com",
+  messagingSenderId: "49846075812",
+  appId: "1:49846075812:web:061126aaee7dc85773c131",
+});
+
+export default firebase;
+
+
+

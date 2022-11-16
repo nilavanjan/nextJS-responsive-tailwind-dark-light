@@ -21,5 +21,15 @@ export default function BackToTop() {
     });
   };
 
-  return <div>{toTop && (<BsArrowUpCircleFill className="totop" onClick={scroolUp} />)}</div>;
+  return (
+    <div>
+      {toTop && (
+        <BsArrowUpCircleFill
+          className="h-9 w-9 md:h-11  md:w-11 rounded-full  bottom-4 right-4 fixed text-red-500 hover:shadow-lg 
+          hover:cursor-pointer hover:shadow-red-600 "
+          onClick={scroolUp}
+        />
+      )}
+    </div>
+  );
 }
